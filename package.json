@@ -2,11 +2,11 @@
   "name": "node-popup",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "cjs.js",
   "scripts": {
     "rollup": "rollup",
     "build-cjs": "rollup --format=cjs --file=cjs.js -- index.js",
-    "build-esm": "rollup --format=esm --file=esm.js -- index.js",
+    "build-esm": "rollup --format=esm --file=esm.mjs -- index.js",
     "build": "npm run build-cjs && npm run build-esm"
   },
   "author": "John Henry",
