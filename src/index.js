@@ -1,5 +1,4 @@
-import {customized} from './lib/customized.js';
-
+import {customized} from '../lib/customized.js';
 import {
     ALERT_PAGE,
     CONFIRM_PAGE,
@@ -7,7 +6,7 @@ import {
     CHOOSE_PAGE,
     CHOOSE_DROPDOWN_PAGE,
     CHOOSE_MULTIPLE_PAGE
-} from './lib/pages.js';
+} from '../lib/pages.js';
 export const alert = customized();
 export const confirm = customized({pageBody:CONFIRM_PAGE});
 export const prompt = customized({pageBody:PROMPT_PAGE});

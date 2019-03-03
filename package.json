@@ -5,8 +5,8 @@
   "main": "cjs.js",
   "scripts": {
     "rollup": "rollup",
-    "build-cjs": "rollup --format=cjs --file=cjs.js -- index.js",
-    "build-esm": "rollup --format=esm --file=esm.mjs -- index.js",
+    "build-cjs": "rollup --format=cjs --file=cjs.js -- src/index.js",
+    "build-esm": "rollup --format=esm --file=esm.mjs -- src/index.js",
     "build": "npm run build-cjs && npm run build-esm",
     "precommit-message": "echo 'Pre-commit...' && exit 0",
     "add-post-build-artifacts": "git add ./esm.mjs && git add ./cjs.js"
