@@ -1,16 +1,58 @@
-# Popup
+# Node Popup
 
-Simulates browser-style alerts (alert, confirm, prompt) from the commandline using a promise based API.
+Simulates browser-style popups (**alert**, **confirm**, and **prompt**) from the commandline using a promise based API.
+Additional alerts (**choose**, **choosedropdown**, and **choosemultiple**)
 
 Note: this project uses [carlo](https://github.com/GoogleChromeLabs/carlo) and you'll need a copy of [chrome](https://www.google.com/chrome/) installed for this it to work.
 
 # Installation
 
 ```sh
-npm install popup
+npm install node-popup
 ```
 
-# usage
+# Export
+
+## Common JS Module
+
+The default export is a common js module.
+
+```javascript
+const popup = require('node-popup');
+```
+
+```javascript
+const popup = require('node-popup/cjs.js');
+```
+
+## Bundler
+
+If you're using some sort of package buldler, you can import the default module as an es6 module.
+
+```javascript
+import * as popup from 'node-popup';
+```
+
+### Raw
+
+The raw source is available... especially useful when bundled as a submodule.
+
+```javascript
+import * as popup from 'node-popup/index.js';
+```
+
+
+
+## ES Module
+
+An ecmascript module is available for use with node's "--experimental-modules" flag.
+Note: since this is experimental, this may not work.
+
+```javascript
+import * as popup from 'node-popup/esm.mjs';
+```
+
+# Usage
 
 ## alert
 
@@ -19,10 +61,9 @@ Simulate an alert box.
 ```javascript
 import {alert} from 'node-popup';
 alert('hello world');
-
 ```
 
-## confirm
+## Confirm
 
 Simulate a confrim box.
 
@@ -42,7 +83,7 @@ main();
 ```
 
 
-## prompt
+## Prompt
 
 Simulate a prompt box.
 
@@ -61,7 +102,7 @@ const main = ()=>{
 main();
 ```
 
-## choose, choosedropdown
+## Choose and Choosedropdown
 
 Like **prompt**, but with multiple choices instead of a free text box.
 
@@ -95,26 +136,9 @@ const main = ()=>{
 main();
 ```
 
-## choosemultiple, choosedropdown
+## Choosemultiple
 
-Like **choose**, but with multiple answers can be selected via checkboxes.
-
-Using **choose** will present a list of answers as radio buttons.
-
-```javascript
-import {choose} from 'node-popup';
-const main = ()=>{
-    try{
-        const choice = await choose('What\'s your choice?', 'choice a', 'choice b', 'choice c');
-        console.log(`You choose: ${choice}`);// OK button clicked
-    }catch(error){
-        console.log('Canceled!');// cancel button clicked
-    }
-}
-main();
-```
-
-## choosemultiple
+Like **choose**, but with multiple answers selected via checkboxes.
 
 Note: The answer returned is an array of strings.
 
