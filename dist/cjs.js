@@ -56,7 +56,7 @@ const customized = ({
   title = defaultOptions.title
 } = defaultOptions) => async (message, ...rest) => new Promise(async (resolve, reject) => {
   const app = await carlo.launch();
-  app.serveFolder(path.join(__dirname, 'pages'));
+  app.serveFolder(path.join(__dirname, '..', 'pages'));
   await app.exposeFunction('info', () => ({
     message,
     rest,
