@@ -4,11 +4,15 @@
   "description": "",
   "main": "cjs.js",
   "scripts": {
-    "rollup": "rollup",
-    "build": "rollup --config",
+    "run-test": "node test/index.js | tap-nyan",
     "precommit-message": "echo 'Pre-commit...' && exit 0",
+    "build": "rollup --config",
     "add-post-build-artifacts": "git add ./esm.mjs && git add ./cjs.js",
-    "run-test":"node test/index.js | tap-nyan"
+    "lint": "tslint -c tslint.json src/**/*.ts",
+    "lint-fix": "tslint -c tslint.json src/**/*.ts --fix",
+    "lint-only-changed": "git diff --staged --name-only HEAD | grep -E '\\.ts$' | xargs tslint",
+    "lint-fix-only-changed": "git diff --staged --name-only HEAD | grep -E '\\.ts$' | xargs tslint --fix",
+    "add-post-lint-fix": "git diff --staged --name-only HEAD | grep -E '\\.ts$' | xargs git add"
   },
   "author": "John Henry",
   "repository": {
@@ -17,7 +21,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "carlo": "0.9.43"
+    "carlo": "0.9.43",
+    "typescript": "3.3.3333"
   },
   "devDependencies": {
     "@babel/core": "7.3.4",
@@ -26,10 +31,13 @@
     "rollup": "1.4.0",
     "rollup-plugin-babel": "4.3.2",
     "tap-nyan": "1.1.0",
-    "tape": "4.10.1"
+    "tape": "4.10.1",
+    "tslint": "5.13.1"
   },
   "pre-commit": [
     "precommit-message",
+    "lint-fix-only-changed",
+    "add-post-lint-fix",
     "build",
     "add-post-build-artifacts"
   ]

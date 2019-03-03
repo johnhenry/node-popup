@@ -5,13 +5,13 @@ Additional alerts (**choose**, **choosedropdown**, and **choosemultiple**)
 
 Note: this project uses [carlo](https://github.com/GoogleChromeLabs/carlo) and you'll need a copy of [chrome](https://www.google.com/chrome/) installed for this it to work.
 
-# Installation
+## Installation
 
 ```sh
 npm install node-popup
 ```
 
-# Export
+## Export
 
 ## Common JS Module
 
@@ -41,8 +41,6 @@ The Typescript source is available... especially useful when bundled as a submod
 import * as popup from 'node-popup/src/index.ts';
 ```
 
-
-
 ## ES Module
 
 An ecmascript module is available for use with node's "--experimental-modules" flag.
@@ -52,7 +50,7 @@ Note: since this is experimental, this may not work.
 import * as popup from 'node-popup/esm.mjs';
 ```
 
-# Usage
+## Usage
 
 ## alert
 
@@ -81,7 +79,6 @@ const main = ()=>{
 }
 main();
 ```
-
 
 ## Prompt
 
@@ -173,6 +170,6 @@ const customizedPopup = customized({
 });
 ```
 
-# Debugging
+## Debugging
 
 This can be useful for quick debugging; but should be viewed as an anti-pattern.

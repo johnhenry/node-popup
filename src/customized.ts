@@ -1,6 +1,8 @@
-import path from 'path';
+import {join} from 'path';
 import carlo from 'carlo';
 import { ALERT_PAGE } from './pages.ts';
+
+const a = 1;
 interface optionsType {
     pageBody: string,
     style: string,
@@ -32,7 +34,8 @@ button#cancel::before {
     content: 'Cancel';
 }
 
-`
+`;
+
 const defaultOptions: optionsType = {
     pageBody: ALERT_PAGE,
     style: defaultStyle,
@@ -53,7 +56,7 @@ const customized = ({
     title = defaultOptions.title
 }: optionsType = defaultOptions) => async (message:string|number, ...rest:(string|number)[]) => new Promise(async (resolve, reject) => {
     const app = await carlo.launch();
-    app.serveFolder(path.join(__dirname, 'pages'));
+    app.serveFolder(join(__dirname, 'pages'));
     await app.exposeFunction('info', () => ({
         message,
         rest,
