@@ -1,20 +1,46 @@
-const carlo = require('carlo');
-const path = require('path');
-const fs = require('fs');
+import path from 'path';
+import carlo from 'carlo';
 
-const { ALERT_PAGE } = require('./pages.js');
+const ALERT_PAGE = 'alert.html';
+const CONFIRM_PAGE = 'confirm.html';
+const PROMPT_PAGE = 'prompt.html';
+const CHOOSE_PAGE = 'choose.html';
+const CHOOSE_DROPDOWN_PAGE = 'choosedropdown.html';
+const CHOOSE_MULTIPLE_PAGE = 'choosemultiple.html';
+
+const defaultStyle = `
+body {
+    text-align: center;
+}
+body div, body div label{
+    display:block;
+}
+body select,
+body input,
+body button {
+    display: inline-block;
+}
+
+button#ok::before {
+    content: 'OK';
+}
+
+button#cancel::before {
+    content: 'Cancel';
+}
+
+`;
+
 const defaultOptions = {
     pageBody: ALERT_PAGE,
-    style: fs.readFileSync(path.join(__dirname, 'style.css'), {
-        encoding: 'utf8'
-    }),
+    style: defaultStyle,
     top: 0,
     left: 0,
     width: 192 * 2,
     height: 108 * 2,
     title: '?'
 };
-const customized = ({
+const customized =  ({
     pageBody = defaultOptions.pageBody,
     style = defaultOptions.style,
     top = defaultOptions.top,
@@ -51,4 +77,11 @@ const customized = ({
     await app.load(pageBody);
 });
 
-module.exports = customized;
+const alert = customized();
+const confirm = customized({pageBody:CONFIRM_PAGE});
+const prompt = customized({pageBody:PROMPT_PAGE});
+const choose = customized({ pageBody: CHOOSE_PAGE });
+const choosedropdown = customized({pageBody:CHOOSE_DROPDOWN_PAGE});
+const choosemultiple = customized({ pageBody: CHOOSE_MULTIPLE_PAGE });
+
+export { alert, confirm, prompt, choose, choosedropdown, choosemultiple, customized };

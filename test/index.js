@@ -6,7 +6,7 @@ const {
     choose,
     choosedropdown,
     choosemultiple
-} = require('./index.js');
+} = require('../cjs.js');
 tape('Sample Test', async ({
                 equal,
                 deepEqual,
