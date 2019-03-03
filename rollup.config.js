@@ -8,31 +8,12 @@ const plugins = [
 ];
 
 export default [{
-    file: 'cjs.js'
+    file: 'dist/cjs.js'
 }, {
-    file: 'esm.mjs',
+    file: 'dist/esm.mjs',
     format: 'esm'
 }].map(({file, format='cjs'})=>({
         input,
         plugins,
         output: {file, format}
 }));
-
-// export default [
-//     {
-//         input,
-//         output: {
-//             file: 'cjs.js',
-//             format: 'cjs'
-//         },
-//         plugins
-//     },
-//     {
-//         input,
-//         output: {
-//             file: 'esm.mjs',
-//             format: 'esm'
-//         },
-//         plugins
-//     }
-// ];

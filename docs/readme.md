@@ -22,7 +22,7 @@ const popup = require('node-popup');
 ```
 
 ```javascript
-const popup = require('node-popup/cjs.js');
+const popup = require('node-popup/dist/cjs.js');
 ```
 
 ## Bundler
@@ -47,7 +47,7 @@ An ecmascript module is available for use with node's "--experimental-modules" f
 Note: since this is experimental, this may not work.
 
 ```javascript
-import * as popup from 'node-popup/esm.mjs';
+import * as popup from 'node-popup/dist/esm.mjs';
 ```
 
 ## Usage
