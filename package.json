@@ -4,11 +4,12 @@
   "description": "",
   "main": "dist/cjs.js",
   "scripts": {
-    "run-test": "node test/index.js | tap-nyan",
+    "demo": "node demo/index.js | tap-nyan",
     "precommit-message": "echo 'Pre-commit...' && exit 0",
     "build": "rollup --config",
     "add-post-build-artifacts": "git add dist/",
     "tslint": "tslint",
+    "test": "node test/index.js",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "lint-fix": "tslint -c tslint.json src/**/*.ts --fix",
     "lint-only-changed": "git diff --staged --name-only HEAD | grep -E '\\.ts$' | xargs tslint",
