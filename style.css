@@ -1,0 +1,19 @@
+body {
+    text-align: center;
+}
+body div, body div label{
+    display:block;
+}
+body select,
+body input,
+body button {
+    display: inline-block;
+}
+
+button#ok::before {
+    content: 'OK';
+}
+
+button#cancel::before {
+    content: 'Cancel';
+}

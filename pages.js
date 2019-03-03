@@ -1,0 +1,12 @@
+const ALERT_PAGE = 'alert.html';
+const CONFIRM_PAGE = 'confirm.html';
+const PROMPT_PAGE = 'prompt.html';
+const CHOOSE_PAGE = 'choose.html';
+const CHOOSE_DROPDOWN_PAGE = 'choosedropdown.html';
+const CHOOSE_MULTIPLE_PAGE = 'choosemultiple.html';
+module.exports.ALERT_PAGE = ALERT_PAGE;
+module.exports.CONFIRM_PAGE = CONFIRM_PAGE;
+module.exports.PROMPT_PAGE = PROMPT_PAGE;
+module.exports.CHOOSE_PAGE = CHOOSE_PAGE;
+module.exports.CHOOSE_DROPDOWN_PAGE = CHOOSE_DROPDOWN_PAGE;
+module.exports.CHOOSE_MULTIPLE_PAGE = CHOOSE_MULTIPLE_PAGE;
