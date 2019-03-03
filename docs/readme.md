@@ -5,6 +5,21 @@ Additional alerts (**choose**, **choosedropdown**, and **choosemultiple**)
 
 Note: this project uses [carlo](https://github.com/GoogleChromeLabs/carlo) and you'll need a copy of [chrome](https://www.google.com/chrome/) installed for this it to work.
 
+## Demo
+
+This demo shows the six different types of included popups.
+
+Note: The last three questions will be graded
+
+```sh
+git clone <this repository>
+cd <cloned folder>
+npm install
+npm run demo
+```
+
+
+
 ## Installation
 
 ```sh

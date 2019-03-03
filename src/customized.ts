@@ -16,24 +16,40 @@ interface optionsType {
 const defaultStyle = `
 body {
     text-align: center;
+    color: #BEBEBE;
+    background-color: #1E1E1E;
 }
 body div, body div label{
-    display:block;
+    display: block;
 }
 body select,
 body input,
 body button {
     display: inline-block;
 }
-
-button#ok::before {
-    content: 'OK';
+button{
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 4px;
 }
-
 button#cancel::before {
     content: 'Cancel';
 }
-
+button#cancel {
+    background-color: #FFFFFF;
+    color: #3478C6;
+}
+button#ok::before {
+    content: 'OK';
+}
+button#ok {
+    background-color: #3478C6;
+    color: #FFFFFF;
+}
+#text, #input{
+    margin-bottom: 4px;
+}
 `;
 
 const defaultOptions: optionsType = {
