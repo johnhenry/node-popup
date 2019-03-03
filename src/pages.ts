@@ -1,4 +1,4 @@
-export const ALERT_PAGE:string = 'alert.html';
+export const ALERT_PAGE: string = 'alert.html';
 export const CONFIRM_PAGE: string  = 'confirm.html';
 export const PROMPT_PAGE: string  = 'prompt.html';
 export const CHOOSE_PAGE: string  = 'choose.html';
