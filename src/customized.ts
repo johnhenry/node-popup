@@ -13,8 +13,26 @@ interface optionsType {
     title: string
 }
 
+
 const defaultStyle = `
+*{
+    box-sizing: border-box;
+}
+
 body {
+    display: grid;
+    grid-template-areas:
+        "text text text"
+        "inpt inpt inpt"
+        ".... cncl okay";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    margin: 0;
+    padding: 8% 8%;
+    height:100%;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: #BEBEBE;
     background-color: #1E1E1E;
@@ -27,6 +45,14 @@ body input,
 body button {
     display: inline-block;
 }
+body label{
+    text-align:left;
+}
+body label input{
+    margin-right: 4px;
+    vertical-align: text-bottom;
+}
+
 button{
     border: 0;
     background: none;
@@ -36,7 +62,14 @@ button{
 button#cancel::before {
     content: 'Cancel';
 }
+body #text{
+    grid-area: text;
+}
+body #input{
+    grid-area: inpt;
+}
 button#cancel {
+    grid-area: cncl;
     background-color: #FFFFFF;
     color: #3478C6;
 }
@@ -44,6 +77,7 @@ button#ok::before {
     content: 'OK';
 }
 button#ok {
+    grid-area: okay;
     background-color: #3478C6;
     color: #FFFFFF;
 }

@@ -7,34 +7,36 @@ const {
     choosedropdown,
     choosemultiple
 } = require('../dist/cjs.js');
-tape('Sample Test', async ({
-                equal,
-                deepEqual,
-    end,
-                plan
-            }) => {
+tape('Demo', async ({
+        equal,
+        deepEqual,
+        end,
+        plan
+    }) => {
     try {
+        // {
+        //     await alert('This is a test');
+        // }
+        // {
+        //     await confirm('Are you ready to start the test?');
+        // }
+        // {
+        //     const answer = await choosedropdown('Choose your unit',
+        //         '0: Introduction',
+        //         '1: After The Beginning...');
+        // }
+        // {
+        //     const answer = await prompt('What is the answer to the ultimate question?', '0');
+        //     equal('42', answer.trim().toLowerCase());
+        // }
         {
-            await alert('This is a test');
+            const answer = await choose('What is the first letter of the english alphabet?', 'A', 'B', 'C');
+            equal('A', answer);
         }
         {
-            await confirm('Are you ready to start the test?');
-        }
-        {
-            const answer = await choosedropdown('Unit?', '0: Introduction', '1: In The Beginning...');
-        }
-        {
-            const answer = await prompt('What is the answer to the ultimate question?', '0');
-            equal('42', answer.trim().toLowerCase(), 'should be "42"');
-        }
-        {
-            const answer = await choose('What is the first letter of the english alphabet?', 'a', 'b', 'c');
-            equal('a', answer, 'should be "a"');
-        }
-        {
-            const answer = await choosemultiple('Ninja Turtles?',
+            const answer = await choosemultiple('Who are the Ninja Turtles?',
                 "Leonardo", "Ralphael", "Michaelangelo", "Donatelo", "Splinter");
-            deepEqual(["Leonardo", "Ralphael", "Michaelangelo", "Donatelo"], answer, 'should be all except "Splinter"');
+            deepEqual(["Leonardo", "Ralphael", "Michaelangelo", "Donatelo"], answer);
         }
     } catch (error) {
         console.log(`Test ended early: ${error.message}`)

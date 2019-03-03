@@ -9,7 +9,24 @@ const CHOOSE_DROPDOWN_PAGE = 'choosedropdown.html';
 const CHOOSE_MULTIPLE_PAGE = 'choosemultiple.html';
 
 const defaultStyle = `
+*{
+    box-sizing: border-box;
+}
+
 body {
+    display: grid;
+    grid-template-areas:
+        "text text text"
+        "inpt inpt inpt"
+        ".... cncl okay";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    margin: 0;
+    padding: 8% 8%;
+    height:100%;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: #BEBEBE;
     background-color: #1E1E1E;
@@ -22,6 +39,14 @@ body input,
 body button {
     display: inline-block;
 }
+body label{
+    text-align:left;
+}
+body label input{
+    margin-right: 4px;
+    vertical-align: text-bottom;
+}
+
 button{
     border: 0;
     background: none;
@@ -31,7 +56,14 @@ button{
 button#cancel::before {
     content: 'Cancel';
 }
+body #text{
+    grid-area: text;
+}
+body #input{
+    grid-area: inpt;
+}
 button#cancel {
+    grid-area: cncl;
     background-color: #FFFFFF;
     color: #3478C6;
 }
@@ -39,6 +71,7 @@ button#ok::before {
     content: 'OK';
 }
 button#ok {
+    grid-area: okay;
     background-color: #3478C6;
     color: #FFFFFF;
 }
@@ -94,21 +127,28 @@ const customized = ({
   await app.load(pageBody);
 });
 
-const alert = customized();
+const alert = customized({
+  title: 'Alert!'
+});
 const confirm = customized({
-  pageBody: CONFIRM_PAGE
+  pageBody: CONFIRM_PAGE,
+  title: 'Confirm?'
 });
 const prompt = customized({
-  pageBody: PROMPT_PAGE
+  pageBody: PROMPT_PAGE,
+  title: 'Prompt?'
 });
 const choose = customized({
-  pageBody: CHOOSE_PAGE
+  pageBody: CHOOSE_PAGE,
+  title: 'Choose?'
 });
 const choosedropdown = customized({
-  pageBody: CHOOSE_DROPDOWN_PAGE
+  pageBody: CHOOSE_DROPDOWN_PAGE,
+  title: 'Choose?'
 });
 const choosemultiple = customized({
-  pageBody: CHOOSE_MULTIPLE_PAGE
+  pageBody: CHOOSE_MULTIPLE_PAGE,
+  title: 'Choose Multiple?'
 });
 
 export { alert, confirm, prompt, choose, choosedropdown, choosemultiple, customized };

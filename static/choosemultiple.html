@@ -7,7 +7,7 @@
             const answer = [];
             const labels = document.getElementsByTagName('LABEL');
             for(const label of labels){
-                if(label.childNodes[1].checked){
+                if(label.childNodes[0].checked){
                     answer.push(label.textContent);
                 }
             }
@@ -30,7 +30,7 @@
             label.textContent = choice;
             const checkbox = document.createElement('INPUT');
             checkbox.type = 'checkbox';
-            label.appendChild(checkbox);
+            label.prepend(checkbox);
             input.appendChild(label);
         }
     };
