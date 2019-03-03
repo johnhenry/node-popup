@@ -1,8 +1,8 @@
-EEE=$(git diff  --staged --name-only HEAD | grep -E '\.ts$')
+FILES=$(git diff  --staged --name-only HEAD | grep -E '\.ts$')
 
-if [ -z "$EEE" ]
+if [ -z "$FILES" ]
 then
       exit 0
 else
-      npm run tslint --fix $EEE
+      npm run tslint --fix $FILES
 fi
