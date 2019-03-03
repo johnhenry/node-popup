@@ -1,9 +1,15 @@
 import path from 'path';
-
 import carlo from 'carlo';
-
-import { ALERT_PAGE } from './pages';
-
+import { ALERT_PAGE } from './pages.ts';
+interface optionsType {
+    pageBody: string,
+    style: string,
+    top: number,
+    left: number,
+    width: number,
+    height: number,
+    title: string
+}
 
 const defaultStyle = `
 body {
@@ -27,8 +33,7 @@ button#cancel::before {
 }
 
 `
-
-const defaultOptions = {
+const defaultOptions: optionsType = {
     pageBody: ALERT_PAGE,
     style: defaultStyle,
     top: 0,
@@ -37,15 +42,16 @@ const defaultOptions = {
     height: 108 * 2,
     title: '?'
 };
-const customized =  ({
+
+const customized = ({
     pageBody = defaultOptions.pageBody,
     style = defaultOptions.style,
     top = defaultOptions.top,
     left = defaultOptions.left,
-    width = defaultOptions.wdith,
+    width = defaultOptions.width,
     height = defaultOptions.height,
     title = defaultOptions.title
-} = defaultOptions) => async (message, ...rest) => new Promise(async (resolve, reject) => {
+}: optionsType = defaultOptions) => async (message:string|number, ...rest:(string|number)[]) => new Promise(async (resolve, reject) => {
     const app = await carlo.launch();
     app.serveFolder(path.join(__dirname, 'pages'));
     await app.exposeFunction('info', () => ({
@@ -70,7 +76,6 @@ const customized =  ({
         height
     });
     window.onbeforeunload = () => reject(new Error('window unloaded'));
-
     await app.load(pageBody);
 });
 

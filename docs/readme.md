@@ -33,12 +33,12 @@ If you're using some sort of package buldler, you can import the default module 
 import * as popup from 'node-popup';
 ```
 
-### Raw
+### Typescript Source
 
-The raw source is available... especially useful when bundled as a submodule.
+The Typescript source is available... especially useful when bundled as a submodule.
 
 ```javascript
-import * as popup from 'node-popup/index.js';
+import * as popup from 'node-popup/src/index.ts';
 ```
 
 

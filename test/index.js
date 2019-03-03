@@ -10,7 +10,8 @@ const {
 tape('Sample Test', async ({
                 equal,
                 deepEqual,
-                end
+    end,
+                plan
             }) => {
     try {
         {
