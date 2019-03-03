@@ -7,7 +7,8 @@
     "rollup": "rollup",
     "build-cjs": "rollup --format=cjs --file=cjs.js -- index.js",
     "build-esm": "rollup --format=esm --file=esm.mjs -- index.js",
-    "build": "npm run build-cjs && npm run build-esm"
+    "build": "npm run build-cjs && npm run build-esm",
+    "precommit-message": "echo 'Pre-commit...' && exit 0"
   },
   "author": "John Henry",
   "repository": {
@@ -21,6 +22,11 @@
   "devDependencies": {
     "rollup": "1.4.0",
     "tap-nyan": "1.1.0",
-    "tape": "4.10.1"
-  }
+    "tape": "4.10.1",
+    "pre-commit": "1.2.2"
+  },
+  "pre-commit": [
+    "precommit-message",
+    "build"
+  ]
 }
