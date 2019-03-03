@@ -12,10 +12,17 @@
     "test": "node test/index.js",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "lint-fix": "tslint -c tslint.json src/**/*.ts --fix",
-    "lint-only-changed": "git diff --staged --name-only HEAD | grep -E '\\.ts$' | xargs tslint",
-    "lint-fix-only-changed": "sh lint-changed-files.sh",
+    "lint-changed": "sh script/lint-changed.sh",
+    "lint-fix-changed": "sh script/lint-fix-changed.sh",
     "add-post-lint-fix": "git diff --staged --name-only HEAD | grep -E '\\.ts$' | xargs git add"
   },
+  "pre-commit": [
+    "precommit-message",
+    "lint-fix-changed",
+    "add-post-lint-fix",
+    "build",
+    "add-post-build-artifacts"
+  ],
   "author": "John Henry",
   "repository": {
     "type": "git",
@@ -35,12 +42,5 @@
     "tape": "4.10.1",
     "tslint": "5.13.1",
     "typescript": "3.3.3333"
-  },
-  "pre-commit": [
-    "precommit-message",
-    "lint-fix-only-changed",
-    "add-post-lint-fix",
-    "build",
-    "add-post-build-artifacts"
-  ]
+  }
 }

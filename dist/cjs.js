@@ -4,6 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var fs = require('fs');
 var path = require('path');
 var carlo = _interopDefault(require('carlo'));
 
@@ -14,77 +15,7 @@ const CHOOSE_PAGE = 'choose.html';
 const CHOOSE_DROPDOWN_PAGE = 'choosedropdown.html';
 const CHOOSE_MULTIPLE_PAGE = 'choosemultiple.html';
 
-const defaultStyle = `
-*{
-    box-sizing: border-box;
-}
-
-body {
-    display: grid;
-    grid-template-areas:
-        "text text text"
-        "inpt inpt inpt"
-        ".... cncl okay";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 3fr 1fr;
-    grid-column-gap: 4px;
-    grid-row-gap: 4px;
-    margin: 0;
-    padding: 8% 8%;
-    height:100%;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: #BEBEBE;
-    background-color: #1E1E1E;
-}
-body div, body div label{
-    display: block;
-}
-body select,
-body input,
-body button {
-    display: inline-block;
-}
-body label{
-    text-align:left;
-}
-body label input{
-    margin-right: 4px;
-    vertical-align: text-bottom;
-}
-
-button{
-    border: 0;
-    background: none;
-    box-shadow: none;
-    border-radius: 4px;
-}
-button#cancel::before {
-    content: 'Cancel';
-}
-body #text{
-    grid-area: text;
-}
-body #input{
-    grid-area: inpt;
-}
-button#cancel {
-    grid-area: cncl;
-    background-color: #FFFFFF;
-    color: #3478C6;
-}
-button#ok::before {
-    content: 'OK';
-}
-button#ok {
-    grid-area: okay;
-    background-color: #3478C6;
-    color: #FFFFFF;
-}
-#text, #input{
-    margin-bottom: 4px;
-}
-`;
+const defaultStyle = fs.readFileSync(path.join(__dirname, '../static/style.css'), 'utf8');
 const defaultOptions = {
   pageBody: ALERT_PAGE,
   style: defaultStyle,
