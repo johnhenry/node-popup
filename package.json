@@ -1,6 +1,6 @@
 {
   "name": "node-popup",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "cjs.js",
   "scripts": {
@@ -8,10 +8,11 @@
     "precommit-message": "echo 'Pre-commit...' && exit 0",
     "build": "rollup --config",
     "add-post-build-artifacts": "git add ./esm.mjs && git add ./cjs.js",
+    "tslint":"tslint",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "lint-fix": "tslint -c tslint.json src/**/*.ts --fix",
     "lint-only-changed": "git diff --staged --name-only HEAD | grep -E '\\.ts$' | xargs tslint",
-    "lint-fix-only-changed": "git diff --staged --name-only HEAD | grep -E '\\.ts$' | xargs tslint --fix",
+    "lint-fix-only-changed": "sh lint-changed-files.sh",
     "add-post-lint-fix": "git diff --staged --name-only HEAD | grep -E '\\.ts$' | xargs git add"
   },
   "author": "John Henry",
