@@ -1,6 +1,6 @@
 {
   "name": "node-popup",
-  "version": "0.0.1",
+  "version": "0.0.2-0",
   "description": "",
   "main": "cjs.js",
   "scripts": {
