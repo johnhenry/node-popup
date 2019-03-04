@@ -1,7 +1,15 @@
 {
   "name": "node-popup",
   "version": "0.1.12",
-  "description": "",
+  "description": "Simulates browser-style popups",
+  "keywords":[
+    "popup",
+    "alert",
+    "confirm",
+    "prompt",
+    "ui",
+    "dialog"
+  ],
   "main": "dist/cjs.js",
   "scripts": {
     "demo": "node demo/index.js | tap-nyan",
