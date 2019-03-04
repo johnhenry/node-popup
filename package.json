@@ -46,7 +46,6 @@
     "@babel/core": "7.3.4",
     "@babel/preset-typescript": "7.3.3",
     "dts-generator": "3.0.0",
-
     "pre-commit": "1.2.2",
     "rollup": "1.4.0",
     "rollup-plugin-babel": "4.3.2",
