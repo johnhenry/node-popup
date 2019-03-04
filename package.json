@@ -21,6 +21,7 @@
     "lint-fix-changed",
     "add-post-lint-fix",
     "build",
+    "test",
     "add-post-build-artifacts"
   ],
   "author": "John Henry",
