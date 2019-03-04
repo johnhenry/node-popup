@@ -2,7 +2,7 @@
   "name": "node-popup",
   "version": "0.1.12",
   "description": "Simulates browser-style popups",
-  "keywords":[
+  "keywords": [
     "popup",
     "alert",
     "confirm",
