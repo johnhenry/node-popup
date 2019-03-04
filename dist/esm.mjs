@@ -19,6 +19,7 @@ const defaultOptions = {
   height: 108 * 2,
   title: '?'
 };
+
 const customized = ({
   pageBody = defaultOptions.pageBody,
   style = defaultOptions.style,
@@ -56,6 +57,7 @@ const customized = ({
 
   await app.load(pageBody);
 });
+
 const alert = customized({
   title: 'Alert'
 });
@@ -80,4 +82,4 @@ const choosemultiple = customized({
   title: 'Choose Multiple'
 });
 
-export { customized, alert, confirm, prompt, choose, choosedropdown, choosemultiple };
+export { alert, confirm, prompt, choose, choosedropdown, choosemultiple, customized };
