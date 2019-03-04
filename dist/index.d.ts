@@ -1,11 +1,17 @@
+declare module 'src/customized' {
+     const customized: ({ pageBody, style, top, left, width, height, title }?: any) => (message: string | number, ...rest: (string | number)[]) => Promise<{}>;
+    export { customized };
+
+}
 declare module 'src/index' {
-    export const customized: ({ pageBody, style, top, left, width, height, title }?: any) => (message: string | number, ...rest: (string | number)[]) => Promise<{}>;
+    import { customized } from 'src/customized.ts';
     export const alert: (message: string) => Promise<string>;
     export const confirm: (message: string) => Promise<string>;
     export const prompt: (message: string | number, defaultAnswer: string | number) => Promise<string>;
     export const choose: (message: string | number, ...choices: (string | number)[]) => Promise<string>;
     export const choosedropdown: (message: string | number, ...choices: (string | number)[]) => Promise<string>;
     export const choosemultiple: (message: string | number, ...choices: (string | number)[]) => Promise<string[]>;
+    export { customized };
 
 }
 declare module 'src/pages' {
