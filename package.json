@@ -23,7 +23,7 @@
     "lint-changed": "sh script/lint-changed.sh",
     "lint-fix-changed": "sh script/lint-fix-changed.sh",
     "generate-types": "dts-generator --indent '    ' --project . --out dist/index.d.ts",
-    "add-post-lint-fix": "git diff --staged --name-only HEAD | grep -E '\\.ts$' | xargs git add"
+    "add-post-lint-fix": "git diff --staged --name-only --diff-filter=M HEAD | grep -E '\\.ts$' | xargs git add"
   },
   "pre-commit": [
     "precommit-message",
