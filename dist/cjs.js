@@ -62,7 +62,6 @@ const customized = ({
 
   await app.load(pageBody);
 });
-
 const alert = customized({
   title: 'Alert'
 });
@@ -87,10 +86,10 @@ const choosemultiple = customized({
   title: 'Choose Multiple'
 });
 
+exports.customized = customized;
 exports.alert = alert;
 exports.confirm = confirm;
 exports.prompt = prompt;
 exports.choose = choose;
 exports.choosedropdown = choosedropdown;
 exports.choosemultiple = choosemultiple;
-exports.customized = customized;
