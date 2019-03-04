@@ -76,7 +76,7 @@ import {alert} from 'node-popup';
 alert('Hello World!');
 ```
 
-![alert](alert.png)
+![alert](docs/alert.png)
 
 ## Confirm
 
@@ -97,7 +97,7 @@ const main = ()=>{
 main();
 ```
 
-![confirm](confirm.png)
+![confirm](docs/confirm.png)
 
 ## Prompt
 
@@ -118,7 +118,7 @@ const main = ()=>{
 main();
 ```
 
-![prompt](prompt.png)
+![prompt](docs/prompt.png)
 
 ## Choose and Choosedropdown
 
@@ -139,7 +139,7 @@ const main = ()=>{
 main();
 ```
 
-![choose](choose.png)
+![choose](docs/choose.png)
 
 Using **choosedropdown** will present a list of answers as radio buttons.
 
@@ -156,7 +156,7 @@ const main = ()=>{
 main();
 ```
 
-![choosedropdown](choosedropdown.png)
+![choosedropdown](docs/choosedropdown.png)
 
 ## Choosemultiple
 
@@ -177,7 +177,7 @@ const main = ()=>{
 main();
 ```
 
-![choosemultiple](choosemultiple.png)
+![choosemultiple](docs/choosemultiple.png)
 
 ## Custom Popups
 
