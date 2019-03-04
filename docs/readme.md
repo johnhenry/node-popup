@@ -67,26 +67,28 @@ import * as popup from 'node-popup/dist/esm.mjs';
 
 ## Usage
 
-## alert
+## Alert
 
 Simulate an alert box.
 
 ```javascript
 import {alert} from 'node-popup';
-alert('hello world');
+alert('Hello World!');
 ```
+
+![alert](alert.png)
 
 ## Confirm
 
-Simulate a confrim box.
+Simulate a confirm box.
 
 Note: popup functions will retun a promise that will be rejected if the window is closed or the "cancel" button is clicked.
 
 ```javascript
-import {confrim} from 'node-popup';
+import {confirm} from 'node-popup';
 const main = ()=>{
     try{
-        await confrim('Confirm or Deny?');
+        await confirm('Confirm or Deny?');
         console.log('Confirmed!');// OK button clicked
     }catch(error){
         console.log('Denied!');// cancel button clicked
@@ -94,6 +96,8 @@ const main = ()=>{
 }
 main();
 ```
+
+![confirm](confirm.png)
 
 ## Prompt
 
@@ -105,7 +109,7 @@ Note: The answer returned is a string.
 import {prompt} from 'node-popup';
 const main = ()=>{
     try{
-        const name = await prompt('What\'s your name?', '"Default Name"');
+        const name = await prompt('What\'s your name?', 'Bob');
         console.log(`Hello ${name}`);// OK button clicked
     }catch(error){
         console.log('Canceled!');// cancel button clicked
@@ -113,6 +117,8 @@ const main = ()=>{
 }
 main();
 ```
+
+![prompt](prompt.png)
 
 ## Choose and Choosedropdown
 
@@ -124,7 +130,7 @@ Using **choose** will present a list of answers as radio buttons.
 import {choose} from 'node-popup';
 const main = ()=>{
     try{
-        const name = await choose('What\'s your choice?', 'choice 0', 'choice 1', 'choice 3');
+        const name = await choose('What\'s your choice?', 'Choice 0', 'Choice 1', 'Choice 2');
         console.log(`You choose: ${prompt}`);// OK button clicked
     }catch(error){
         console.log('Canceled!');// cancel button clicked
@@ -133,13 +139,15 @@ const main = ()=>{
 main();
 ```
 
+![choose](choose.png)
+
 Using **choosedropdown** will present a list of answers as radio buttons.
 
 ```javascript
 import {choosedropdown} from 'node-popup';
 const main = ()=>{
     try{
-        const choice = await choosedropdown('What is your choice?', 'choice 0', 'choice 1', 'choice 3');
+        const choice = await choosedropdown('What\'s your choice?', 'Choice A', 'Choice B', 'Choice C');
         console.log(`You have chosen: ${choice}`);// OK button clicked
     }catch(error){
         console.log('Canceled!');// cancel button clicked
@@ -147,6 +155,8 @@ const main = ()=>{
 }
 main();
 ```
+
+![choosedropdown](choosedropdown.png)
 
 ## Choosemultiple
 
@@ -158,7 +168,7 @@ Note: The answer returned is an array of strings.
 import {choosemultiple} from 'node-popup';
 const main = ()=>{
     try{
-        const choices = await choosemultiple('What are your choices?', 'alpha', 'beta', 'gamma');
+        const choices = await choosemultiple('What are your choices?', 'Choice α', 'Choice β', 'Choice γ');
         console.log(`Your choices are ${choice.join(',')}`);// OK button clicked
     }catch(error){
         console.log('Canceled!');// cancel button clicked
@@ -166,6 +176,8 @@ const main = ()=>{
 }
 main();
 ```
+
+![choosemultiple](choosemultiple.png)
 
 ## Custom Popups
 

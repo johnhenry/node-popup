@@ -65,27 +65,27 @@ const customized = ({
 });
 
 const alert = customized({
-  title: 'Alert!'
+  title: 'Alert'
 });
 const confirm = customized({
   pageBody: CONFIRM_PAGE,
-  title: 'Confirm?'
+  title: 'Confirm'
 });
 const prompt = customized({
   pageBody: PROMPT_PAGE,
-  title: 'Prompt?'
+  title: 'Prompt'
 });
 const choose = customized({
   pageBody: CHOOSE_PAGE,
-  title: 'Choose?'
+  title: 'Choose'
 });
 const choosedropdown = customized({
   pageBody: CHOOSE_DROPDOWN_PAGE,
-  title: 'Choose?'
+  title: 'Choose'
 });
 const choosemultiple = customized({
   pageBody: CHOOSE_MULTIPLE_PAGE,
-  title: 'Choose Multiple?'
+  title: 'Choose Multiple'
 });
 
 exports.alert = alert;
