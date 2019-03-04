@@ -2,15 +2,7 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import carlo from 'carlo';
 import { ALERT_PAGE } from './pages.ts';
-interface optionsType {
-    pageBody: string,
-    style: string,
-    top: number,
-    left: number,
-    width: number,
-    height: number,
-    title: string
-}
+import optionsType from './types/options.d.ts';
 
 const defaultStyle = readFileSync(join(__dirname,'../static/style.css'),'utf8');
 
