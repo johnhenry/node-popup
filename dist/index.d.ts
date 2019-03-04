@@ -1,6 +1,6 @@
 declare module 'src/customized' {
-     const customized: ({ pageBody, style, top, left, width, height, title }?: any) => (message: string | number, ...rest: (string | number)[]) => Promise<{}>;
-    export { customized };
+    import optionsType from 'src/types/options.d.ts';
+    export const customized: (options: optionsType) => (message: string | number, ...rest: (string | number)[]) => Promise<string | string[]>;
 
 }
 declare module 'src/index' {

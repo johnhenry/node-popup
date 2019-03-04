@@ -19,7 +19,6 @@ const defaultOptions = {
   height: 108 * 2,
   title: '?'
 };
-
 const customized = ({
   pageBody = defaultOptions.pageBody,
   style = defaultOptions.style,

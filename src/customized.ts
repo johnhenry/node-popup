@@ -16,7 +16,7 @@ const defaultOptions: optionsType = {
     title: '?'
 };
 
-const customized = ({
+export const customized: (options: optionsType) => (message: string | number, ...rest: (string | number)[]) => Promise<string | string[]> = ({
     pageBody = defaultOptions.pageBody,
     style = defaultOptions.style,
     top = defaultOptions.top,
@@ -51,6 +51,3 @@ const customized = ({
     window.onbeforeunload = () => reject(new Error('window unloaded'));
     await app.load(pageBody);
 });
-
-
-export { customized };
