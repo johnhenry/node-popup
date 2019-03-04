@@ -1,4 +1,4 @@
-FILES=$(git diff  --staged --name-only HEAD | grep -E '\.ts$')
+FILES=$(git diff  --staged --name-only --diff-filter=M HEAD | grep -E '\.ts$')
 
 if [ -z "$FILES" ]
 then
